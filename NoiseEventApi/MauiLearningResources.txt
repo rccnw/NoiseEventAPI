@@ -1,0 +1,24 @@
+
+
+
+Announcing .NET MAUI support for .NET 7 Release Candidate 2
+https://devblogs.microsoft.com/dotnet/dotnet-maui-rc2/
+
+
+https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/device/geolocation
+
+https://learn.microsoft.com/en-us/dotnet/maui/platform-integration/appmodel/maps?tabs=ios
+
+
+MAUI code samples
+
+https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&products=dotnet-maui
+
+
+
+sample
+
+maui-samples/7.0/UserInterface/Views/Map/
+
+https://github.com/dotnet/maui-samples/tree/main/7.0/UserInterface/Views/Map
+

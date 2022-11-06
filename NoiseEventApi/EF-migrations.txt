@@ -1,0 +1,13 @@
+
+
+open Package Manager console
+
+ensure dropdown is set to 'NoiseEventApi'  (in this solution currently the only option)
+
+add-migration initial    (arbitrary migration name)
+
+
+To undo this action, use Remove-Migration.
+
+
+update-database
