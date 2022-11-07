@@ -22,18 +22,24 @@
                     Id = 1,
                     Data = "event 1",
                     UtcTime = DateTime.UtcNow.ToString(),
+                    Longitude = -122.333056,
+                    Latitude = 47.609722
                 },
                 new NoiseEvent
                 {
                     Id = 2,
                     Data = "event 2",
                     UtcTime = DateTime.UtcNow.ToString(),
+                    Longitude = 0,
+                    Latitude = 0
                 },
                 new NoiseEvent
                 {
                     Id = 3,
                     Data = "event 3",
                     UtcTime = DateTime.UtcNow.ToString(),
+                    Longitude = 0,
+                    Latitude = 0
                 }
             );
 

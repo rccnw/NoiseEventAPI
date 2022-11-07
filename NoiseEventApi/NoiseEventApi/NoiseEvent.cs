@@ -7,8 +7,6 @@
             Data = string.Empty;
             Type = string.Empty;
             UtcTime = string.Empty;
-            Longitude = string.Empty;
-            Latitude = string.Empty;
         }
 
         public int Id { get; set; }
@@ -17,8 +15,8 @@
         //
         //public Point Location { get; set; }
         public string UtcTime { get; set; }
-        public string Longitude{ get; set; }
-        public string Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
 
         //  public GeoLocation GeoLocation { get; set; }
 
