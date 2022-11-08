@@ -12,7 +12,10 @@
         public int Id { get; set; }
         public string Data { get; set; }
         public string Type { get; set; }
-        //
+        
+        // sirens, horns, animals, cars, motorcycles, trucks, people, train horns, trains, brakes, construction, performance venue, night club
+
+
         //public Point Location { get; set; }
         public string UtcTime { get; set; }
         public double Longitude { get; set; }
