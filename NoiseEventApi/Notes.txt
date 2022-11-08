@@ -1,0 +1,126 @@
+
+ASP.NET Core API Project
+.Net 7 preview RC2 (final)  10/29/2022
+Minimal API
+Top Level Statements
+OpenAPI
+No Auth
+HTTPS only
+
+
+
+see: 
+
+Breaking changes in .NET 7
+https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0
+
+
+What's new in ASP.NET Core 7.0 preview
+10/26/22
+https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-6.0
+
+
+
+https://thecodeblogger.com/2022/09/22/net-7-getting-started-on-minimal-apis/
+
+This post is about implementing unit testing ASP.NET Core Minimal APIs. This feature is only available in .NET Core 7 Preview
+https://dotnetthoughts.net/unittest-aspnetcore-minimal-apis/
+
+new support for route handler filters in minimal APIs, along with improved unit testability for minimal route handlers. 
+Filters are executed before the core route handler logic and can be used to inspect and modify handler parameters or intercept handler execution
+https://visualstudiomagazine.com/articles/2022/04/18/aspnetcore-net-7-preview-3.aspx
+
+
+reference projects:
+
+Steve Smith
+https://github.com/ardalis?tab=repositories
+https://github.com/ardalis/ApiEndpoints
+
+ASP.NET Core API Endpoints are essentially Razor Pages for APIs
+
+
+What’s new in System.Text.Json in .NET 7
+https://devblogs.microsoft.com/dotnet/system-text-json-in-dotnet-7/
+
+System.Text.Json
+NuGet\Install-Package System.Text.Json -Version 7.0.0-rc.2.22472.3
+
+
+full reference app https://github.com/dotnet-architecture/eShopOnWeb
+
+
+related
+
+https://github.com/KevinDockx?tab=repositories
+pluralsight 'ASP.NET Core 6 Web API Fundamentals' course source
+https://github.com/KevinDockx/AspNetCore6WebAPIFundamentals
+
+
+Steve Smith / Ardalis
+https://github.com/ardalis/ApiEndpoints#2-introducing-aspnet-core-api-endpoints
+
+ Introducing ASP.NET Core API Endpoints
+
+ASP.NET Core API Endpoints are essentially Razor Pages for APIs. They break apart bloated controllers and group the API models used by individual endpoints with the endpoint logic itself. They provide a simple way to have a single file for the logic and linked files for the model types.
+
+When working with ASP.NET Core API Endpoints your project won't need any Controller classes. You can organize the Endpoints however you want. By feature. In a giant Endpoints folder. It doesn't matter - they'll work regardless of where you put them.
+
+Most REST APIs have groups of endpoints for a given resource. In Controller-based projects you would have a controller per resource. When using API Endpoints you can simply create a folder per resource, just as you would use folders to group related pages in Razor Pages.
+
+Instead of Model-View-Controller (MVC) the pattern becomes Request-EndPoint-Response(REPR). The REPR (reaper) pattern is much simpler and groups everything that has to do with a particular API endpoint together. It follows SOLID principles, in particular SRP and OCP. It also has all the benefits of feature folders and better follows the Common Closure Principle by grouping together things that change together.
+
+
+
+
+https://stackoverflow.com/questions/8079786/gps-data-in-sqlite
+
+
+https://learn.microsoft.com/en-us/ef/core/modeling/spatial
+
+
+var seattle = new Point(-122.333056, 47.609722) { SRID = 4326 };
+
+
+https://stackoverflow.com/questions/41766901/capture-utc-time-from-string-and-format-all-datetime-to-it
+
+string dto = "2017-01-01T15:48:00-07:00";
+
+DateTimeOffset dateTimeOffset = DateTimeOffset.Parse(dto);
+
+https://www.tutorialsteacher.com/csharp/csharp-datetime
+
+
+
+https://stackoverflow.com/questions/69974567/gps-conversion-16digit-hexadecimal-value-to-longitude-and-latitude
+
+https://stackoverflow.com/questions/72844833/how-to-storing-lat-lon-info-that-read-from-mobile-gps-into-sqlite-database
+
+o your schema could be :-
+
+a column for storing the rowid, but just in case the standard android BaseColumns will be used which equates to _ID, 
+the value stored will be a unique integer (long) and it will be the PRIMARY KEY (which implies a unique column).
+a column for the lat double should suffice
+likewise for lon
+the date/time can be stored as a long
+
+
+SQLiteOpenHelper
+
+
+https://learn.microsoft.com/en-us/sql/t-sql/spatial-geography/spatial-types-geography?view=sql-server-2017
+
+https://learn.microsoft.com/en-us/ef/core/modeling/spatial
+https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Sqlite.NetTopologySuite
+
+options.UseSqlServer(
+    @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=WideWorldImporters",
+    x => x.UseNetTopologySuite());
+
+https://www.nuget.org/packages/NetTopologySuite
+
+GeoJson 
+https://geojson.io/#map=2/0/20
+
+
+
