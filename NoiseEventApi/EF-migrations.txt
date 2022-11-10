@@ -6,6 +6,7 @@ ensure dropdown is set to 'NoiseEventApi'  (in this solution currently the only 
 
 add-migration initial    (arbitrary migration name)
 
+add-migration AddedIdentityTables
 
 To undo this action, use Remove-Migration.
 

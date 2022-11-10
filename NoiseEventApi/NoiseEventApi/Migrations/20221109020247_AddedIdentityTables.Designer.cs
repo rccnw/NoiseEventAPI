@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NoiseEventApi;
 
@@ -10,9 +11,11 @@ using NoiseEventApi;
 namespace NoiseEventApi.Migrations
 {
     [DbContext(typeof(NoiseEventDbContext))]
-    partial class NoiseEventDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221109020247_AddedIdentityTables")]
+    partial class AddedIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
@@ -41,20 +44,6 @@ namespace NoiseEventApi.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "d1b5952a-2162-46c7-b29e-1a2a68922c14",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "42358d3e-3c22-45e1-be81-6caa7ba865ef",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -142,40 +131,6 @@ namespace NoiseEventApi.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "408aa945-3d84-4421-8342-7269ec64d949",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ac95fff9-af4f-434f-b555-9a224d1d9d9c",
-                            Email = "admin@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBnq4u4+NDZiQNQv6IuGE5qyhQuIasn7hLvt5xakxiqMJ9l2InegZVvE1+oSnsP0vQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "d27d8305-d2f9-4fdc-b655-e6efa9286fa0",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@localhost.com"
-                        },
-                        new
-                        {
-                            Id = "3f4631bd-f907-4409-b416-ba356312e659",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "48fba3aa-993a-477d-913f-d52235e712c9",
-                            Email = "user@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@LOCALHOST.COM",
-                            NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAPWqsxCFIbV8/bBmqfwSOLfAMSKR8XmfQoXkhwJYF3edbsL+JvQ8I7ydIWpTT0/4A==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "87a18473-f131-4637-a975-339ac1a7ef8d",
-                            TwoFactorEnabled = false,
-                            UserName = "user@localhost.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -236,18 +191,6 @@ namespace NoiseEventApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "408aa945-3d84-4421-8342-7269ec64d949",
-                            RoleId = "d1b5952a-2162-46c7-b29e-1a2a68922c14"
-                        },
-                        new
-                        {
-                            UserId = "3f4631bd-f907-4409-b416-ba356312e659",
-                            RoleId = "42358d3e-3c22-45e1-be81-6caa7ba865ef"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -305,34 +248,25 @@ namespace NoiseEventApi.Migrations
                             Latitude = 47.609721999999998,
                             Longitude = -122.333056,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/9/2022 2:02:47 AM"
                         },
                         new
                         {
                             Id = 2,
                             Data = "event 2",
-                            Latitude = 47.534050074149732,
-                            Longitude = -122.3756040651044,
+                            Latitude = 0.0,
+                            Longitude = 0.0,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/9/2022 2:02:47 AM"
                         },
                         new
                         {
                             Id = 3,
-                            Data = "event 2",
-                            Latitude = 47.536847222433394,
-                            Longitude = -122.3639542838912,
-                            Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
-                        },
-                        new
-                        {
-                            Id = 4,
                             Data = "event 3",
-                            Latitude = 47.53168586589171,
-                            Longitude = -122.37644247129047,
+                            Latitude = 0.0,
+                            Longitude = 0.0,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/9/2022 2:02:47 AM"
                         });
                 });
 
