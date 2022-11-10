@@ -8,6 +8,9 @@ No Auth
 HTTPS only
 
 
+P@ssword1
+user@localhost.com
+admin@localhost.com
 
 see: 
 
@@ -121,6 +124,15 @@ https://www.nuget.org/packages/NetTopologySuite
 
 GeoJson 
 https://geojson.io/#map=2/0/20
+
+
+Dot NET 6 WEB API EF CORE SQLITE
+https://github.com/Jay-study-nildana/CSharpForStudents/tree/main/WebApiDotNet6/DotNet6APIEFCoreSQLite
+
+jwt.io
+https://jwt.io/
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjQ2MzFiZC1mOTA3LTQ0MDktYjQxNi1iYTM1NjMxMmU2NTkiLCJqdGkiOiI1MmEzYzhhMS1kYzZiLTQ5OTEtODdhNC0xMmQ3NjcyMTIwZWQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ1c2VyQGxvY2FsaG9zdC5jb20iLCJlbWFpbF9jb25maXJtZWQiOiJUcnVlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTY2ODA0MTYwMSwiaXNzIjoiTm9pc2VFdmVudEFwaSIsImF1ZCI6Ik1hdWlBcHAifQ.ZWoGrCUSHG7xHXh21Jpw0He99i1RhkY0O7AM-rsOOdg
+
 
 
 
