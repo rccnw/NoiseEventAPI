@@ -135,4 +135,57 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjQ2MzFiZC1mOTA3LTQ0MDktYjQxNi1
 
 
 
+Seq for Serilog
+https://datalust.co/seq
 
+
+
+
+Using IAsyncEnumerable
+
+can support in-memory filtering
+
+[HttpGet("products")]
+public async IAsyncEnumerable<Product> ListAsync()
+{
+    var products = _repository.GetProductsAsync();
+
+    await foreach (var product in products)
+    {
+        if (product.IsOnSale)
+        {
+            // will return each product one by one from data source as it is received
+            yield return product;
+        }
+    }
+}
+
+ActionResult<T>  best to return, still need attribute [ProducesResponseType(StatusCodes.Status201Created)]
+
+Minimal Api's return IResult which is similar to IActionResult (not strongly typed)
+
+
+
+Minimal APIs quick reference
+
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0
+
+
+https://github.com/ardalis/minimalwebapi
+
+
+https://github.com/ardalis/ApiEndpoints
+
+
+git clone https://github.com/ardalis/ApiEndpoints.git
+
+feature folders
+razor pages
+
+https://codemag.com/Article/2201081/Minimal-APIs-in-.NET-6
+
+http://www.binaryintellect.net/articles/78af5609-725a-42c4-b17e-99f0dd6256f4.aspx
+
+
+Migrate minimal APIs to controller based APIs
+http://www.binaryintellect.net/articles/78af5609-725a-42c4-b17e-99f0dd6256f4.aspx

@@ -1,4 +1,6 @@
-using NoiseEventApi;
+using NoiseEventApi.Data;
+
+const string corsPolicyNameAllowAll = "AllowAll";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,14 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(o => {
-    o.AddPolicy("AllowAll", a => a.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+    o.AddPolicy( name: corsPolicyNameAllowAll, a => a.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 });
 
 
 var conn = new SqliteConnection($"Data Source=C:\\noiseevent\\noiseevent.db");
 builder.Services.AddDbContext<NoiseEventDbContext>(o => o.UseSqlite(conn));
 
-builder.Services.AddIdentityCore<IdentityUser>()
+builder.Services.AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<NoiseEventDbContext>();
 
@@ -45,8 +47,8 @@ builder.Services.AddAuthorization(options =>
     .Build();
 });
 
-builder.Host.UseSerilog((ctx, lc) =>
-    lc.WriteTo.Console()
+builder.Host.UseSerilog((ctx, loggerConfiguration) =>
+    loggerConfiguration.WriteTo.Console()
     .ReadFrom.Configuration(ctx.Configuration));
 
 
@@ -63,7 +65,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("AllowAll");
+app.UseCors(policyName: corsPolicyNameAllowAll);
 
 // declare minimal API's
 #region Noise Event apis
@@ -115,7 +117,7 @@ app.MapDelete("/noiseevents/{id}", async (int id, NoiseEventDbContext db) => {
 
 #region Identity apis
 
-app.MapPost("/login", async (LoginDto loginDto, UserManager<IdentityUser> _userManager) =>
+app.MapPost("/login", async (LoginDto loginDto, UserManager<ApiUser> _userManager) =>
 {
 
     var user = await _userManager.FindByNameAsync(loginDto.Username);

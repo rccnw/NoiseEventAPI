@@ -8,6 +8,8 @@ add-migration initial    (arbitrary migration name)
 
 add-migration AddedIdentityTables
 
+add-migration ApiUser
+
 To undo this action, use Remove-Migration.
 
 

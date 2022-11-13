@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NoiseEventApi;
+using NoiseEventApi.Data;
 
 #nullable disable
 
@@ -78,104 +78,6 @@ namespace NoiseEventApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "408aa945-3d84-4421-8342-7269ec64d949",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ac95fff9-af4f-434f-b555-9a224d1d9d9c",
-                            Email = "admin@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBnq4u4+NDZiQNQv6IuGE5qyhQuIasn7hLvt5xakxiqMJ9l2InegZVvE1+oSnsP0vQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "d27d8305-d2f9-4fdc-b655-e6efa9286fa0",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@localhost.com"
-                        },
-                        new
-                        {
-                            Id = "3f4631bd-f907-4409-b416-ba356312e659",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "48fba3aa-993a-477d-913f-d52235e712c9",
-                            Email = "user@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@LOCALHOST.COM",
-                            NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAPWqsxCFIbV8/bBmqfwSOLfAMSKR8XmfQoXkhwJYF3edbsL+JvQ8I7ydIWpTT0/4A==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "87a18473-f131-4637-a975-339ac1a7ef8d",
-                            TwoFactorEnabled = false,
-                            UserName = "user@localhost.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -269,6 +171,116 @@ namespace NoiseEventApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("NoiseEventApi.Data.ApiUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "408aa945-3d84-4421-8342-7269ec64d949",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "49b90177-4e03-4e0c-9986-1c1b285cb3a3",
+                            Email = "admin@localhost.com",
+                            EmailConfirmed = true,
+                            FirstName = "Rob",
+                            LastName = "Campbell",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
+                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPTqcVP0Jvft/q9EeYQjWaFZuC3kIE2orxDJZGURLLqIvNWDtUsF48DzkK1EmR5Z+Q==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "02d83394-1312-4865-95c8-a69b7e6cc8f2",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@localhost.com"
+                        },
+                        new
+                        {
+                            Id = "3f4631bd-f907-4409-b416-ba356312e659",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "41ae4fb5-360d-4862-ae08-daac4848786f",
+                            Email = "user@localhost.com",
+                            EmailConfirmed = true,
+                            FirstName = "Rob",
+                            LastName = "Campbell",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@LOCALHOST.COM",
+                            NormalizedUserName = "USER@LOCALHOST.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKs2fngXo2LaI3pT/58oqYvv/WQHJP+dqgMNHwpbCdeXpSk17A/fy51pW+m6Wi9ujg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6ec0acea-05e1-4208-8256-881c12701291",
+                            TwoFactorEnabled = false,
+                            UserName = "user@localhost.com"
+                        });
+                });
+
             modelBuilder.Entity("NoiseEventApi.NoiseEvent", b =>
                 {
                     b.Property<int>("Id")
@@ -305,7 +317,7 @@ namespace NoiseEventApi.Migrations
                             Latitude = 47.609721999999998,
                             Longitude = -122.333056,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/10/2022 4:53:27 PM"
                         },
                         new
                         {
@@ -314,7 +326,7 @@ namespace NoiseEventApi.Migrations
                             Latitude = 47.534050074149732,
                             Longitude = -122.3756040651044,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/10/2022 4:53:27 PM"
                         },
                         new
                         {
@@ -323,7 +335,7 @@ namespace NoiseEventApi.Migrations
                             Latitude = 47.536847222433394,
                             Longitude = -122.3639542838912,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/10/2022 4:53:27 PM"
                         },
                         new
                         {
@@ -332,7 +344,7 @@ namespace NoiseEventApi.Migrations
                             Latitude = 47.53168586589171,
                             Longitude = -122.37644247129047,
                             Type = "",
-                            UtcTime = "11/9/2022 7:42:55 PM"
+                            UtcTime = "11/10/2022 4:53:27 PM"
                         });
                 });
 
@@ -347,7 +359,7 @@ namespace NoiseEventApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("NoiseEventApi.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -356,7 +368,7 @@ namespace NoiseEventApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("NoiseEventApi.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -371,7 +383,7 @@ namespace NoiseEventApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("NoiseEventApi.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -380,7 +392,7 @@ namespace NoiseEventApi.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("NoiseEventApi.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

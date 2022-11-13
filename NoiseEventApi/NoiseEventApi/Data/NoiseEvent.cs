@@ -1,4 +1,4 @@
-﻿namespace NoiseEventApi
+﻿namespace NoiseEventApi.Data
 {
     public class NoiseEvent
     {
@@ -12,7 +12,7 @@
         public int Id { get; set; }
         public string Data { get; set; }
         public string Type { get; set; }
-        
+
         // sirens, horns, animals, cars, motorcycles, trucks, people, train horns, trains, brakes, construction, performance venue, night club
 
 
@@ -20,11 +20,5 @@
         public string UtcTime { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
-
-        //  public GeoLocation GeoLocation { get; set; }
-
-
-        // var seattle = new Point(-122.333056, 47.609722) { SRID = 4326 };
-        // new Location(20.7557, -155.9880);
     }
 }
